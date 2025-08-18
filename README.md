@@ -1,4 +1,4 @@
-# ✨ Portfólio Pessoal – Sabrina de Jesus Braz  
+# ✨ Portfólio Profissional – Sabrina de Jesus Braz  
 
 👋 Olá, seja bem-vindo(a) ao meu espaço digital!  
 Este portfólio foi criado com muito carinho para compartilhar minha jornada no mundo da tecnologia, meus projetos e aprendizados.  
