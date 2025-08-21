@@ -1,0 +1,43 @@
+body{
+    background-color: rosybrown;
+    margin: 2em;
+    padding: 2em;
+    border-style: double;
+}
+
+h1{
+    font-family: "Aguafina Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.div_pai{
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+}
+
+#texto{
+    margin-right: 13em;
+    padding: 6em 6em;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.foto_sabrina{
+    width: 400px;
+    margin-right: 8em;
+}
+
+.bloquinhos{
+    border-style: double;
+    margin: 2px;
+}
+
