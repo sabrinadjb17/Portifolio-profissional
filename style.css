@@ -12,32 +12,47 @@ h1{
     font-size: 70px;
     display: flex;
     justify-content: center;
+    border-style: double;
+    padding: 3px;
 }
 
 .div_pai{
     display: flex;
     justify-content: space-around;
     justify-content: center;
+    padding: 6em 6em;
 }
 
 #texto{
-    margin-right: 13em;
-    padding: 6em 6em;
+    margin-right: 10em;
 }
 
 p{
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .foto_sabrina{
-    width: 400px;
-    margin-right: 8em;
+    width: 300px;
+    margin-right: 6em;
 }
 
-.bloquinhos{
+#feedback{
+    width: 80%;
+    height: 20em;
+}
+
+td{
     border-style: double;
     margin: 2px;
+}
+
+a:hover{
+    color: aliceblue;
+}
+
+a{
+    color: black;
 }
 
