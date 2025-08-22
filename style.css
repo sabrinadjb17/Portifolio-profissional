@@ -16,6 +16,10 @@ h1{
     padding: 3px;
 }
 
+h2{
+    font-size: 20px;
+}
+
 .div_pai{
     display: flex;
     justify-content: space-around;
