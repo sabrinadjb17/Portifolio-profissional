@@ -1,0 +1,54 @@
+.cabecalho{
+    border: solid 3px blue;
+    background-color: bisque;
+}
+
+#img_css{
+    width: 100px;
+}
+
+#img_java{
+    width: 100px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+#titulo{
+    color: darkgreen;
+    position: absolute;
+    top: 18px;
+    left: 45%;
+}
+
+header{
+    background-color: lightskyblue;
+    text-align: center;
+    padding: 10px;
+}
+
+a{
+    color:darkred;
+    text-decoration: none;
+    padding-left: 50px;
+}
+
+body{
+    background-color: lightgray;
+}
+
+h2{
+    text-align: center;
+}
+
+.texto_body{
+    color: indigo;
+    text-align: center;
+}
+
+.img_livros{
+    width: 180px;
+    height: 260px;
+    padding-left: 350px;
+}
+
