@@ -8,7 +8,7 @@
 <body>
     
     <div class="cabecalho">
-    <img id= "img_css" src="img_copy/c++.png" alt="Imagem do C++">
+    <img id= "img_C" src="img_copy/c++.png" alt="Imagem do C++">
     <h1 id="titulo">C++ e Java</h1>
     <img  id="img_java" src="img_copy/java.png" alt="Imagem Java">
     </div>
@@ -32,14 +32,15 @@
 
 
     <h2>Aprenda a programar com Java e C++ na FEI.</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/4MHAOPxcnsQ?si=f_1ir6DHi3DFcUOi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe id="iframe_yt" width="560" height="315" src="https://www.youtube.com/embed/4MHAOPxcnsQ?si=f_1ir6DHi3DFcUOi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d233785.8490640024!2d-46.5587985!3d-23.7151259!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4158ef9c7c05%3A0x776b798985695f52!2sFEI%20-%20Campus%20S%C3%A3o%20Bernardo%20do%20Campo!5e0!3m2!1spt-BR!2sbr!4v1756407580275!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     <h2>Contatos</h2>
+    <div class="tabela_contatos">
         <table>
         <tr>
-            <td>Nome</td>
-            <td>email</td>
+            <td class="titulo_tabela" >Nome</td>
+            <td class="titulo_tabela" >email</td>
         </tr>
         <tr>
             <td>Prof. Dr. Fagner Pimentel</td>
@@ -50,21 +51,29 @@
             <td>isaacjesus@fei.edu.br</td>
         </tr>
     </table>
+    </div>
 
-    <div>
-        <p>Sites para consulta:</p>
-        <ul>
-            <li>HTML-<span>https://www.w3schools.com/html/</span></li>
-            <li>CSS-<span>https://www.w3schools.com/css/</span></li>
-            <li>JavaScript-<span>https://www.w3schools.com/js/</span></li>
-        </ul>
+    <div class="sites_consulta_pai">
+        <div class="sites_consulta">
+            <p>Sites para consulta:</p>
+            <ul>
+                <li>HTML-
+                    <div class="sites"><span>https://www.w3schools.com/html/</span></div>
+                </li>
+                <li>CSS-
+                    <div class="sites"><span>https://www.w3schools.com/css/</span></div>
+                </li>
+                <li>JavaScript-
+                    <div class="sites"><span>https://www.w3schools.com/js/</span></div>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <footer>
-        <img src="img_copy/html.png" alt="Imagem html">
-        <p>Desejamos um excelente semestre a todos.</p>
-        <p>(Fonte Usada: Comic Sans MS, tamanho 15pt)</p>
-        <img src="img_copy/css.png" alt="Imagem css">
+        <img id="img_html" class="img_rodape" src="img_copy/html.png" alt="Imagem html">
+        <div class="p_footer"><p>Desejamos um excelente semestre a todos.</p><br>(Fonte Usada: Comic Sans MS, tamanho 15pt)</p></div>
+        <img class="img_rodape" id="img_css" src="img_copy/css.png" alt="Imagem css">
     </footer>
 </body>
 </html>
