@@ -1,6 +1,8 @@
 .cabecalho{
     border: solid 3px blue;
     background-color: bisque;
+    display: flex;
+    justify-content: space-between
 }
 
 #img_C{
@@ -9,16 +11,11 @@
 
 #img_java{
     width: 100px;
-    position: absolute;
-    right: 0px;
-    top: 10px;
 }
 
 #titulo{
     color: darkgreen;
-    position: absolute;
-    top: 18px;
-    left: 45%;
+    justify-content: center;
 }
 
 header{
@@ -31,6 +28,12 @@ a{
     color:darkred;
     text-decoration: none;
     padding-left: 50px;
+}
+
+#img_livro{
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
 }
 
 body{
@@ -52,14 +55,19 @@ h2{
     padding-left: 165px;
 }
 
+
+.diviframe{
+    display: flex;
+    justify-content: center;
+}
+
 iframe{
     width: 280px;
     height: 230px;
 }
 
 #iframe_yt{
-    padding-left: 280px;
-    padding-right: 65px;
+    padding-right: 100px;
 }
 
 .tabela_contatos{
