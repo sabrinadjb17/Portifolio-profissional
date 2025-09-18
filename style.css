@@ -50,6 +50,7 @@ p{
 td{
     border-style: double;
     margin: 2px;
+    border-color: black;
 }
 
 a:hover{
@@ -58,5 +59,10 @@ a:hover{
 
 a{
     color: black;
+    text-decoration: none;
+}
+
+.texto_tabela{
+    color: lightgrey;
 }
 
