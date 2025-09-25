@@ -1,16 +1,9 @@
 let num_aleatorio = Math.random()
-let soma = '';
-let novo_valor
+let numeros_pequenos = ''
+let numeros_grandes = ''
 num_aleatorio = num_aleatorio * 100
 num_aleatorio = Math.floor(num_aleatorio)
 console.log(num_aleatorio)
-
-
-function somatorio(){
-    novo_valor = document.getElementById("numero");
-    soma = document.getElementById('ten_pequenas').value + "-" + novo_valor;
-    document.getElementById("ten_pequenas").value = soma
-}
 
 
 function numero_igual(){
@@ -22,10 +15,14 @@ function numero_igual(){
         let = lista_num_menor = document.getElementById(ten)
     } 
     if (numero < num_aleatorio){
+        numeros_pequenos = numero + ', '  + numeros_pequenos
+        document.getElementById('ten_pequenas').innerHTML = numeros_pequenos
         document.getElementById("mensagem_aviso").innerHTML = "Número muito baixo";
-        document.getElementById("mensagem_aviso").style.setProperty("background-color", "red");
+        document.getElementById("mensagem_aviso").style.setProperty("background-color", "yellow");
     }
     if(numero > num_aleatorio){
+        numeros_grandes = numero + ', ' + numeros_grandes 
+        document.getElementById('ten_grandes').innerHTML = numeros_grandes
         document.getElementById("mensagem_aviso").innerHTML = "Número muito alto";
         document.getElementById("mensagem_aviso").style.setProperty("background-color", "red");       
     }
