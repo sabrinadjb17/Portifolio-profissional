@@ -1,0 +1,17 @@
+body{
+    background-color: rosybrown;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+}
+
+canvas{
+    border: 2px solid gray;
+    border-radius: 4px;
+}
