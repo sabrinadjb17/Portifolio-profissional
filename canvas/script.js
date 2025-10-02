@@ -119,17 +119,21 @@ desenhar_quadrados(ctx2, 'rgb(143, 253, 212)', 0, 0, 300, 300);
 retangulo(ctx2, 'gray', 0, 220, 300, 80);
 retangulo(ctx2, 'rgb(69, 142, 252)', 0, 260, 105, 40);
 retangulo(ctx2, 'rgb(69, 142, 252)', 0, 220, 40, 80);
-retangulo(ctx2, 'rgb(134, 71, 26)', 105, 125, 80, 95);
-retangulo(ctx2, 'rgb(98, 68, 35)', 135, 170, 23, 50);
+retangulo(ctx2, 'rgb(134, 71, 26)', 105, 122, 90, 98);
+retangulo(ctx2, 'rgb(98, 68, 35)', 140, 170, 23, 50);
 retangulo(ctx2, 'rgb(134, 71, 26)', 40, 170, 20, 50);
 retangulo(ctx2, 'rgb(134, 71, 26)', 260, 210, 20, 50);
 
 // quadrados
-desenhar_quadrados(ctx2, 'rgb(71, 189, 253)', 112, 147, 22, 22);
-desenhar_quadrados(ctx2, 'rgb(71, 189, 253)', 157, 147, 22, 22);
+desenhar_quadrados(ctx2, 'rgb(71, 189, 253)', 117, 147, 22, 22);
+desenhar_quadrados(ctx2, 'rgb(71, 189, 253)', 162, 147, 22, 22);
 
 // triangulo
-triangulo(ctx2, 'rgb(245, 105, 77)', 105, 125, 185, 125, 145, 90);
+triangulo(ctx2, 'rgb(245, 105, 77)', 105, 122, 195, 122, 150, 90);
 
 // circulos
 preencher_arco(ctx2, 'rgb(69, 142, 252)', 0, 220, 40, 3.0, 4.0);
+preencher_arco(ctx2, 'rgb(69, 142, 252)', 100, 299.5, 40, 1.0, 4.0);
+preencher_arco(ctx2, 'green', 50, 160, 28, 1.0, 4.0);
+preencher_arco(ctx2, 'green', 270, 190, 28, 1.0, 4.0);
+preencher_arco(ctx2, 'yellow', 230, 75, 40, 1.0, 4.0);
