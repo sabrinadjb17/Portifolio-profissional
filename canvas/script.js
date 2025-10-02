@@ -1,10 +1,10 @@
 let canvas1 = document.getElementById('canvas1');
-let ctx1 = canvas.getContext('2d');
+let ctx1 = canvas1.getContext('2d');
 //colocar o ctx como entrada de variavel em todas as funções 
-function desenhar_quadrados(ctx, cor,px, py, h, w ){
+function desenhar_quadrados(ctx, cor,px, py, largura, altura){
     ctx.beginPath();
     ctx.fillStyle = cor;
-    ctx.fillRect(px,py,h,w);
+    ctx.fillRect(px,py, largura, altura);
     ctx.closePath();
 }
 
@@ -27,19 +27,109 @@ function desenhar_arco(ctx, cor, espessura,coordenadax, coordenaday, t_arco, pos
     ctx.closePath();
 }
 
-function escrever(ctx, espessura, cor, tamanho_font, localizacao, texto, x, y){
+function preencher_arco(ctx, cor, coordenadax, coordenaday, t_arco, posicao1, posicao2){
     ctx.beginPath();
-    ctx.lineWidth = espessura;
-    ctx.strokeStyle = cor;
-    ctx.font = tamanho_font;
-    ctx.textAlign = localizacao;
-    ctx.strokeText(texto,x,y);
+    ctx.fillStyle = cor;
+    ctx.arc(coordenadax,coordenaday,t_arco,posicao1*Math.PI,posicao2*Math.PI); 
+    ctx.fill();
     ctx.closePath();
 }
 
-function retangulo(ctx, cor, px, py, h, w){
+
+function escrever(ctx, cor, tamanho_font, localizacao, texto, x, y){
     ctx.beginPath();
     ctx.fillStyle = cor;
-    ctx.fillRect(px, py, h, w);
-
+    ctx.font = tamanho_font;
+    ctx.textAlign = localizacao;
+    ctx.fillText(texto,x,y);
+    ctx.closePath();
 }
+
+function retangulo(ctx, cor, x, y, largura, altura){
+    ctx.beginPath();
+    ctx.fillStyle = cor;
+    ctx.fillRect(x, y, largura, altura);
+    ctx.closePath();
+}
+
+function triangulo(ctx, cor, movex, movey, linex1, liney1, linex2, liney2){
+    ctx.beginPath();
+    ctx.fillStyle = cor;
+    ctx.moveTo(movex, movey);
+    ctx.lineTo(linex1, liney1);
+    ctx.lineTo(linex2, liney2)
+    ctx.fill();
+    ctx.closePath();
+}
+
+// chamada para o canva 1
+
+// quadrados
+desenhar_quadrados(ctx1, 'white', 0, 0, 300, 300);
+desenhar_quadrados(ctx1,'blue', 0, 0, 50, 50);
+desenhar_quadrados(ctx1, 'red', 250, 0, 50, 50);
+desenhar_quadrados(ctx1, 'yellow', 0, 270, 30, 30);
+desenhar_quadrados(ctx1, 'yellow', 0, 240, 30, 30);
+desenhar_quadrados(ctx1, 'yellow', 30, 270, 30, 30);
+desenhar_quadrados(ctx1, 'black', 270, 270, 30, 30);
+desenhar_quadrados(ctx1, 'black', 270, 240, 30, 30);
+desenhar_quadrados(ctx1, 'black', 240, 270, 30, 30);
+desenhar_quadrados(ctx1, 'cyan', 0, 120, 30, 30);
+desenhar_quadrados(ctx1, 'cyan', 0, 150, 30, 30);
+desenhar_quadrados(ctx1, 'cyan', 270, 135, 30, 30);
+desenhar_quadrados(ctx1, 'red', 110, 150, 40, 40);
+
+// linhas
+desenhar_linhas(ctx1, 'green', 1, 0, 150, 300, 150);
+desenhar_linhas(ctx1, 'gray', 1, 150, 150, 150, 300);
+desenhar_linhas(ctx1, 'blue', 1, 150, 150, 0, 0);
+desenhar_linhas(ctx1, 'red', 1, 150, 150, 300, 0);
+
+// circulos formas
+desenhar_arco(ctx1, 'green', 1, 150, 150, 60, 1.0, 2.0);
+desenhar_arco(ctx1, 'green', 1, 150, 150, 80, 1.0, 1.25);
+desenhar_arco(ctx1, 'green', 1, 150, 150, 80, 3.75, 4.0);
+desenhar_arco(ctx1, 'green', 1, 150, 300, 40, 3.0, 4.0);
+desenhar_arco(ctx1, 'green', 1, 150, 300, 60, 3.5, 4.0);
+desenhar_arco(ctx1, 'green', 1, 150, 300, 85, 3.0, 3.5);
+desenhar_arco(ctx1, 'green', 1, 70, 225, 13, 1.0, 4.0);
+desenhar_arco(ctx1, 'green', 1, 225, 225, 13, 1.0, 4.0);
+desenhar_arco(ctx1, 'blue', 1, 150, 115, 13, 1.0, 4.0);
+
+// circulos preeenchimento
+preencher_arco(ctx1, 'cyan', 150, 300, 40, 3.0, 4.0);
+preencher_arco(ctx1, 'yellow', 70, 225, 13, 1.0, 4.0);
+preencher_arco(ctx1, 'yellow', 225, 225, 13, 1.0, 4.0);
+preencher_arco(ctx1, 'cyan', 150, 115, 13, 1.0, 4.0);
+
+// escrita
+escrever(ctx1, 'gray', '20px Arial', 'center', 'Canvas', 145, 40);
+
+
+
+
+//chamada para o canva 2
+let canvas2 = document.getElementById('canvas2');
+let ctx2 = canvas2.getContext('2d');
+
+// fundo
+desenhar_quadrados(ctx2, 'rgb(143, 253, 212)', 0, 0, 300, 300);
+
+// retangulos
+retangulo(ctx2, 'gray', 0, 220, 300, 80);
+retangulo(ctx2, 'rgb(69, 142, 252)', 0, 260, 105, 40);
+retangulo(ctx2, 'rgb(69, 142, 252)', 0, 220, 40, 80);
+retangulo(ctx2, 'rgb(134, 71, 26)', 105, 125, 80, 95);
+retangulo(ctx2, 'rgb(98, 68, 35)', 135, 170, 23, 50);
+retangulo(ctx2, 'rgb(134, 71, 26)', 40, 170, 20, 50);
+retangulo(ctx2, 'rgb(134, 71, 26)', 260, 210, 20, 50);
+
+// quadrados
+desenhar_quadrados(ctx2, 'rgb(71, 189, 253)', 112, 147, 22, 22);
+desenhar_quadrados(ctx2, 'rgb(71, 189, 253)', 157, 147, 22, 22);
+
+// triangulo
+triangulo(ctx2, 'rgb(245, 105, 77)', 105, 125, 185, 125, 145, 90);
+
+// circulos
+preencher_arco(ctx2, 'rgb(69, 142, 252)', 0, 220, 40, 3.0, 4.0);
