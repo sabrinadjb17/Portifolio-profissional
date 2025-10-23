@@ -39,3 +39,40 @@ bolinha.img.src = 'img/bola-acero.png';
 bolinha.img.onload = function() {
     bolinha.desenha();
 };
+
+
+function ativarMouse() {
+  canvas.addEventListener('mousemove', function(evento) {
+    let rect = canvas.getBoundingClientRect();
+    let x_mouse = evento.clientX - rect.left;
+    let y_mouse = evento.clientY - rect.top;
+
+    // centraliza a bolinha no cursor (metade da largura/altura)
+    bolinha.x = x_mouse - bolinha.width / 2;
+    bolinha.y = y_mouse - bolinha.height / 2;
+
+    // redesenha a cena
+    desenhaTudo();
+  });
+}
+
+// canvas.addEventListener('mousemove', function(evento) {
+//     let rect = canvas.getBoundingClientRect();
+//     let x_mouse = evento.clientX - rect.left;
+//     let y_mouse = evento.clientY - rect.top;
+
+//     // centraliza
+//     let novoX = x_mouse - bolinha.width / 2;
+//     let novoY = y_mouse - bolinha.height / 2;
+
+//     // limita dentro do canvas
+//     if (novoX < 0) novoX = 0;
+//     if (novoY < 0) novoY = 0;
+//     if (novoX > canvas.width - bolinha.width) novoX = canvas.width - bolinha.width;
+//     if (novoY > canvas.height - bolinha.height) novoY = canvas.height - bolinha.height;
+
+//     bolinha.x = novoX;
+//     bolinha.y = novoY;
+
+//     desenhaTudo();
+// });
