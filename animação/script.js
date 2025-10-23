@@ -9,25 +9,25 @@ let babyYoda = {
 
     desenha: function() {
         ctx.save(); // salva o estado atual
-        ctx.translate(canvas.width, canvas.height); // move o ponto para o canto inferior direito
-        ctx.drawImage(this.img, -130, -130, 140, 140); // desenha a imagem redimensionada
+        ctx.translate(canvas.width, canvas.height); 
+        ctx.drawImage(this.img, -130, -130, 140, 140); 
         ctx.restore(); // volta ao estado original
     }
 };
-
-// define o caminho da imagem
 babyYoda.img.src = 'img/baby_yoda.png';
 
-// desenha depois que a imagem carregar
 babyYoda.img.onload = function() {
     babyYoda.desenha();
 };
+
 
 // Bolinha
 let bolinha = {
     img: new Image(),
     x: 50,
     y: 50,
+    largura: 10,
+    altura: 10,
 
     desenha: function() {
         ctx.drawImage(this.img, this.x, this.y, 50, 50); // largura e altura em pixels
@@ -40,39 +40,35 @@ bolinha.img.onload = function() {
     bolinha.desenha();
 };
 
+document.addEventListener('mousemove', function(evento){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let rect = canvas. getBoundingClientRect();
+    let x_mouse = evento.clientX - rect.left - 25;
+    let y_mouse = evento.clientY - rect.top - 15;
+    console.log(x_mouse, y_mouse);
 
-function ativarMouse() {
-  canvas.addEventListener('mousemove', function(evento) {
-    let rect = canvas.getBoundingClientRect();
-    let x_mouse = evento.clientX - rect.left;
-    let y_mouse = evento.clientY - rect.top;
+    bolinha.x = x_mouse;
+    bolinha.y = y_mouse;
 
-    // centraliza a bolinha no cursor (metade da largura/altura)
-    bolinha.x = x_mouse - bolinha.width / 2;
-    bolinha.y = y_mouse - bolinha.height / 2;
+    let buffer = 25
+    // direita
+    if (bolinha.x >= 300 - bolinha.largura - buffer){
+        bolinha.x = 300 - bolinha.largura - buffer
+    }
+    // esquerda
+    if (bolinha.x <= 0){
+        bolinha.x = -15
+    }
+    // em cima
+    if (bolinha.y <= 0){
+        bolinha.y = 0
+    }
+    // em baixo
+    if (bolinha.y >= 300 - bolinha.altura - buffer){
+        bolinha.y = 300 - bolinha.altura - (buffer - 10)
+    }
 
-    // redesenha a cena
-    desenhaTudo();
-  });
-}
+    bolinha.desenha();
+    babyYoda.desenha();
+});
 
-// canvas.addEventListener('mousemove', function(evento) {
-//     let rect = canvas.getBoundingClientRect();
-//     let x_mouse = evento.clientX - rect.left;
-//     let y_mouse = evento.clientY - rect.top;
-
-//     // centraliza
-//     let novoX = x_mouse - bolinha.width / 2;
-//     let novoY = y_mouse - bolinha.height / 2;
-
-//     // limita dentro do canvas
-//     if (novoX < 0) novoX = 0;
-//     if (novoY < 0) novoY = 0;
-//     if (novoX > canvas.width - bolinha.width) novoX = canvas.width - bolinha.width;
-//     if (novoY > canvas.height - bolinha.height) novoY = canvas.height - bolinha.height;
-
-//     bolinha.x = novoX;
-//     bolinha.y = novoY;
-
-//     desenhaTudo();
-// });
